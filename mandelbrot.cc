@@ -46,7 +46,7 @@ namespace{
 	void plotStart(){
 		printf("P2\n");
 		printf("%lu %lu\n", SIZE_X, SIZE_Y);
-		printf("%ul\n", 255);
+		printf("%lu\n", 255l);
 	}
 
 	void plot(size_t, size_t, size_t iterations, size_t c){
