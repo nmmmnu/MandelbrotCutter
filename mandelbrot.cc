@@ -68,7 +68,7 @@ namespace{
 		plotStart();
 
 		for(size_t y = 0; y < SIZE_Y; ++y){
-			double yr = convert<SIZE_Y>(y);
+			auto const yr = convert<SIZE_Y>(y);
 
 			for(size_t x = 0; x < SIZE_X; ++x){
 				auto const xr = convert<SIZE_X>(x);
