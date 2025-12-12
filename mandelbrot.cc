@@ -20,8 +20,8 @@ namespace{
 
 		size_t i = 0;
 		for(; i < iterations; ++i){
-			double const zx_sq = zx * zx;
-			double const zy_sq = zy * zy;
+			auto const zx_sq = zx * zx;
+			auto const zy_sq = zy * zy;
 
 			if (zx_sq + zy_sq > ESCAPE2)
 				return i;
@@ -91,7 +91,7 @@ int main(int argc, char **argv){
 		return 1;
 	}
 
-	size_t const iter = atol(argv[1]);
+	auto const iter = atol(argv[1]);
 
 	build(iter);
 }
