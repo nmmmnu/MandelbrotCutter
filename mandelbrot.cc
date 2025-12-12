@@ -20,8 +20,8 @@ namespace{
 
 		size_t i = 0;
 		for(; i < iterations; ++i){
-			double zx_sq = zx * zx;
-			double zy_sq = zy * zy;
+			double const zx_sq = zx * zx;
+			double const zy_sq = zy * zy;
 
 			if (zx_sq + zy_sq > ESCAPE2)
 				return i;
