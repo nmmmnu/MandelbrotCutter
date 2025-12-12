@@ -1,9 +1,6 @@
 #include <cstdio>
 #include <cstdint>
 #include <cstdlib>
-#include <array>
-
-using Color = uint8_t;
 
 constexpr size_t ITERATIONS	= 128;
 constexpr size_t SIZE		= 2048;
@@ -17,11 +14,11 @@ constexpr double ESCAPE2	= 2 * ESCAPE;
 
 namespace{
 
-	Color Z(double x, double y, size_t iterations){
+	constexpr size_t Z(double x, double y, size_t iterations){
 		double zx = 0;
 		double zy = 0;
 
-		Color i = 0;
+		size_t i = 0;
 		for(; i < iterations; ++i){
 			double zx_sq = zx * zx;
 			double zy_sq = zy * zy;
@@ -40,9 +37,10 @@ namespace{
 
 	template<size_t Size>
 	constexpr auto convert(size_t x){
-		const double p = (ESCAPE2) / (Size - 1);
+		auto const p  = (ESCAPE2) / (Size - 1);
+		auto const xd = static_cast<double>(x);
 
-		return p * x - ESCAPE;
+		return p * xd - ESCAPE;
 	}
 
 	void plotStart(){
@@ -51,8 +49,8 @@ namespace{
 		printf("%ul\n", 255);
 	}
 
-	void plot(size_t, size_t, size_t iterations, Color c){
-		Color const x = c == iterations ? 255 : 0;
+	void plot(size_t, size_t, size_t iterations, size_t c){
+		uint8_t const x = c == iterations ? 255 : 0;
 
 		printf("%3u ", x);
 	}
