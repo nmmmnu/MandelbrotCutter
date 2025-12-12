@@ -44,13 +44,15 @@ namespace{
 	}
 
 	void plotStart(){
+		uint8_t const colors = 0xFF;
+
 		printf("P2\n");
 		printf("%lu %lu\n", SIZE_X, SIZE_Y);
-		printf("%lu\n", 255l);
+		printf("%u\n", colors);
 	}
 
 	void plot(size_t, size_t, size_t iterations, size_t c){
-		uint8_t const x = c == iterations ? 255 : 0;
+		uint8_t const x = c == iterations ? 0xFF : 0x00;
 
 		printf("%3u ", x);
 	}
